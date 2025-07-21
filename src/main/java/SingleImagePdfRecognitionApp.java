@@ -27,8 +27,8 @@ import java.util.regex.Pattern;
 
 public class SingleImagePdfRecognitionApp extends JFrame {
     public static void main(String[] args) {
-        String tessDataPath = "D:\\Tesseract-OCR\\tessdata";
-        String path = "D:\\idea\\111\\excelpdf\\output\\";
+        String tessDataPath = "D:\\Tesseract-OCR\\tessdata";   //Tesseract-OCR语言包路径
+        String path = "D:\\excelpdf\\output\\";     //pdf文件存储路径
         List<String> list = new ArrayList<>(); // 存储成功提取的图号
         List<String> failedFiles = new ArrayList<>(); // 存储提取失败的 PDF 文件名
         File dir = new File(path);
@@ -183,7 +183,7 @@ public class SingleImagePdfRecognitionApp extends JFrame {
     private static String extractFigureNumber(String text) {
         if (text == null || text.trim().isEmpty()) return null;
         // 匹配包含 BJDCJC- 或 BIDCJC- 后跟三个两位数字段的模式
-        Pattern pattern = Pattern.compile(".*(B[IJ]DCJC-\\d{2}-\\d{2}-\\d{2}).*");
+        Pattern pattern = Pattern.compile(".*(B[IJ]DCJC-\\d{2}-\\d{2}-\\d{2}).*");   //需要截取的文字片段
         Matcher matcher = pattern.matcher(text.replaceAll("\\s+", ""));
         if (matcher.find()) {
             String figureNumber = matcher.group(1);
