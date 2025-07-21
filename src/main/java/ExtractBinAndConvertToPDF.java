@@ -9,8 +9,8 @@ public class ExtractBinAndConvertToPDF {
     private static final Logger logger = LogManager.getLogger(ExtractBinAndConvertToPDF.class);
 
     public static void main(String[] args) {
-        String excelFilePath = "C:\\Users\\erkua\\Desktop\\文件夹\\线缆信息表格\\线缆信息台账.xlsx";
-        String outputDir = "output/";
+        String excelFilePath = "xxx.xlsx";  //excel文件路径
+        String outputDir = "output/";    //输出目录
 
         try {
             // 验证输入文件
